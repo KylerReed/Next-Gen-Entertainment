@@ -1,0 +1,151 @@
+
+:root {
+  --bg: #0d0f14;
+  --surface: #14171c;
+  --surface-hover: #1f232b;
+  --text: #ffffff;
+  --muted: #9aa0ac;
+  --accent: #4ec3ff;
+  --accent-hover: #78d7ff;
+  --radius: 14px;
+  --transition: 0.25s ease;
+  --shadow: 0 4px 25px rgba(0,0,0,0.4);
+}
+
+body.light {
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --surface-hover: #e7e9ee;
+  --text: #202020;
+  --muted: #555;
+  --accent: #0077cc;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+  transition: var(--transition);
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+header {
+  background: var(--surface);
+  padding: 20px 0;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--accent);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--surface-hover);
+  color: var(--accent);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  margin: 12px auto 0;
+  display: block;
+  padding: 10px 16px;
+  font-size: 1rem;
+  background: var(--accent);
+  color: black;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+#theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h2 {
+  font-size: 2.6rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  padding: 50px 0;
+}
+
+.card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.card:hover {
+  background: var(--surface-hover);
+  transform: translateY(-6px);
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: var(--muted);
+  margin-top: 60px;
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 2.1rem;
+  }
+}
